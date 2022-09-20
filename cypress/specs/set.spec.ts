@@ -32,7 +32,7 @@ describe('The Study Set Creation flow should be created correctly', () => {
     });
 
     it('The user should be able to upload a file', () => {
-      setPage.uploadFile('/Users/admin/Documents/To Read/1901.01538.pdf');
+      setPage.uploadFile('cypress/data/1912.09686.pdf');
       setPage.assertDocumentUploaded('1901.01538');
     });
 
