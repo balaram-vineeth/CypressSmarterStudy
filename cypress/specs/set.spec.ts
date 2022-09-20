@@ -37,22 +37,25 @@ describe('The Study Set Creation flow should be created correctly', () => {
     });
 
     it('The user should be able to add a new note', ()=> {
+      let animalName = chance.animal();
+
       setPage.openNotesTab();
       setPage.clickCreateNotesButton();
       notesPage.clickEditNotesButton();
-      notesPage.enterNotesTitle('New note about X');
-      notesPage.enterNotesEditorText('New note about X -- Sample');
+      notesPage.enterNotesTitle(animalName);
+      notesPage.enterNotesEditorText(`New note about X -- ${animalName}`);
       notesPage.clickBackButton();
-      setPage.assertNoteTitle('New note about X');
-      setPage.assertNoteSummary('New note about X -- Sample');
+      setPage.openNotesTab();
+      setPage.assertNoteTitle(animalName);
+      setPage.assertNoteSummary(`New note about X -- ${animalName}`);
     });
 
     it('The user should be able to add a flashcard', ()=> {
       setPage.openFlashCardTab();
       setPage.clickCreateFlashCardButton();
 
-      flashcardPage.enterQuestion('Question One');
-      flashcardPage.enterAnswer('Answer One');
+      flashcardPage.enterQuestion(`Question about ${chance.animal()}`);
+      flashcardPage.enterAnswer(`Answer about ${chance.animal()}`);
       flashcardPage.clickCreateButton();
       flashcardPage.clickBackButton();
     });
@@ -62,6 +65,7 @@ describe('The Study Set Creation flow should be created correctly', () => {
       setPage.clickOverFlowButton(studySetName);
       setPage.clickDeleteButton();
       setPage.clickDeleteApprovalButton();
+      setPage.assertStudyCardNotPresent(studySetName);
     })
 
 

@@ -28,6 +28,4 @@ jobs:
         # Artifact name
         name: Run Report
         # Destination path
-        path: |
-            cypress/reports
-            cypress/videos
+        path: reports

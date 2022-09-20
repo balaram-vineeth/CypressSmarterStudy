@@ -160,6 +160,16 @@ class SetPage {
     public clickDeleteApprovalButton() {
         this.getDeleteApprovalButton().click();
     }
+
+    public assertStudyCardNotPresent(nameOfSet:string) {
+        cy.intercept({
+            method: 'DELETE',
+            url: '**/users/*/course-subjects/*/',
+          }).as('deleteStudySetCall')       
+        cy.wait('@deleteStudySetCall', {timeout:80000});
+        cy.wait(2000);
+        this.getSetCardTitle().contains(nameOfSet).should('not.exist');
+    }
 }
 
 export = new SetPage();
