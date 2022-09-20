@@ -1,3 +1,4 @@
+These tests use `Cypress` as test automation framework, and `mochawesome`. 
 ## Running the tests
 ### Running locally
 1. Run `npm install` to install all the dependencies
