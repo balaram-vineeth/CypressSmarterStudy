@@ -1,0 +1,31 @@
+{
+  "name": "smarter_s_cypress",
+  "version": "1.0.0",
+  "description": "A Sample Cypress test script",
+  "main": "index.js",
+  "scripts": {
+    "scripts": "cypress run",
+    "test": "npm run scripts"
+  },
+  "keywords": [
+    "Cypress",
+    "UI"
+  ],
+  "author": "Balaram Vineeth Venugopal",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.8.0",
+    "cypress-xpath": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/chance": "^1.1.3",
+    "chance": "^1.1.8",
+    "cypress-mochawesome-reporter": "^3.2.2",
+    "cypress-multi-reporters": "^1.6.1",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0",
+    "typescript": "^4.8.3"
+  }
+}
