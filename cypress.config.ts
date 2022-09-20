@@ -1,4 +1,4 @@
-import { envDetails } from "./src/data/env";
+import { envDetails } from "./cypress/data/env";
 
 const { defineConfig } = require("cypress");
 
